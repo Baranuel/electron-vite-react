@@ -1,7 +1,4 @@
-
 import UpdateElectron from '@/components/update'
-import './App.css'
-
 function App() {
 
   return (

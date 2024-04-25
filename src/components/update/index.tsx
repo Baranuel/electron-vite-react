@@ -8,7 +8,7 @@ const Update = () => {
   const [checking, setChecking] = useState(false)
   const [updateAvailable, setUpdateAvailable] = useState(false)
   const [versionInfo, setVersionInfo] = useState<VersionInfo>()
-  console.log('versionInfo', versionInfo)
+
   const [updateError, setUpdateError] = useState<ErrorType>()
   const [progressInfo, setProgressInfo] = useState<Partial<ProgressInfo>>()
   const [modalOpen, setModalOpen] = useState<boolean>(false)
@@ -38,6 +38,7 @@ const Update = () => {
   }
 
   const onUpdateCanAvailable = useCallback((_event: Electron.IpcRendererEvent, arg1: VersionInfo) => {
+    console.log('onUpdateCanAvailable', arg1)
     setVersionInfo(arg1)
     setUpdateError(undefined)
     // Can be update
